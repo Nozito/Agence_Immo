@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ajouter une Pièce"
+        android:textSize="24sp"
+        android:layout_marginBottom="16dp"/>
+
+    <Spinner
+        android:id="@+id/room_type_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/room_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Niveau"/>
+
+    <EditText
+        android:id="@+id/room_length"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Longueur (m)"
+        android:inputType="numberDecimal"/>
+
+    <EditText
+        android:id="@+id/room_width"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Largeur (m)"
+        android:inputType="numberDecimal"/>
+
+    <Button
+        android:id="@+id/btn_create_room"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Créer Pièce"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bonjour et bienvenue chez Hilton Immobilier!"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btn_add_apartment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ajouter un Appartement"
+        android:padding="16dp"
+        android:backgroundTint="@color/black"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/btn_view_apartment_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voir le détail de l'Appartement"
+        android:padding="16dp"
+        android:backgroundTint="@color/black"
+        android:textColor="@android:color/white"/>
+</LinearLayout>
