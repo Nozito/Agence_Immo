@@ -1,4 +1,4 @@
-package com.example.agence_immo; // Remplacez par le nom de votre package
+package com.example.agence_immo;
 
 import java.io.Serializable;
 

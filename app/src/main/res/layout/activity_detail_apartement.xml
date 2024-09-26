@@ -1,21 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="50dp"
+    android:background="#ffffff"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:translationY="35dp">
 
+    <!-- Title of the App -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/spectral"
+        android:gravity="center"
+        android:padding="1dp"
+        android:text="@string/app_name"
+        android:textColor="#707070"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="30dp" />
+
+    <!-- Title of Recap -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/spectral"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="@string/title_recapitulatif"
+        android:textColor="#707070"
+        android:textSize="25dp"
+        android:layout_marginBottom="30dp"
+        android:textStyle="bold" />
+
+    <!-- Recap of the Apartment Details -->
     <TextView
         android:id="@+id/apartment_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:layout_marginBottom="16dp"/>
+        android:padding="5dp"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="#707070"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/spectral"
+        android:layout_gravity="center"
+        />
 
+    <!-- Validate Button -->
     <Button
-        android:id="@+id/btn_add_piece"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ajouter une Pièce"/>
+        android:text="Ajouter une pièce"
+        android:layout_marginTop="215dp"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:id="@+id/btn_add_room"
+        android:textColor="#707070"
+        android:fontFamily="@font/spectral"
+        />
+
+    <!-- Return Button -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Retour"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_rectangle_black"
+        android:padding="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:id="@+id/btn_home"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/spectral"
+        />
 </LinearLayout>

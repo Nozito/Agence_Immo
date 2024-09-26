@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">Agence_Immo</string>
+    <string name="app_name">Hilton Company</string>
+    <string name="title_recapitulatif">Recapitulatif</string>
+        <string-array name="room_types">
+            <item>Chambre</item>
+            <item>Salon</item>
+            <item>Cuisine</item>
+            <item>Salle de bain</item>
+            <item>Bureau</item>
+        </string-array>
 </resources>

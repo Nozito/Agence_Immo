@@ -16,7 +16,7 @@
             android:name=".AddRoomActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailApartementActivity"
+            android:name=".ApartmentDetailActivity"
             android:exported="false" />
         <activity
             android:name=".AddApartmentActivity"
@@ -30,9 +30,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".CreateAppartementActivity"
-            android:exported="false" />
     </application>
 
 </manifest>

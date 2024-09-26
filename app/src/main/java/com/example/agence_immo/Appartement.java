@@ -7,8 +7,9 @@ public class Appartement implements Serializable {
     private String city;
     private String postalCode;
     private int floor;
-    private boolean hasElevator;
+    private boolean hasElevator = false;
 
+    // Constructor
     public Appartement(String street, String city, String postalCode, int floor, boolean hasElevator) {
         this.street = street;
         this.city = city;
@@ -17,23 +18,10 @@ public class Appartement implements Serializable {
         this.hasElevator = hasElevator;
     }
 
-    public String getStreet() {
-        return street;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public int getFloor() {
-        return floor;
-    }
-
-    public boolean hasElevator() {
-        return hasElevator;
-    }
+    // Getters
+    public String getStreet() { return street; }
+    public String getCity() { return city; }
+    public String getPostalCode() { return postalCode; }
+    public int getFloor() { return floor; }
+    public boolean isHasElevator() { return hasElevator; }
 }

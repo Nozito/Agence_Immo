@@ -1,86 +1,59 @@
-package com.example.agence_immo; // Remplacez par le nom de votre package
+package com.example.agence_immo;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AddRoomActivity extends AppCompatActivity {
 
     private Spinner roomTypeSpinner;
-    private EditText roomLevel;
-    private EditText roomLength;
-    private EditText roomWidth;
-    private Button btnCreateRoom;
-
-    private String[] roomTypes = {"Chambre", "Salon", "Cuisine", "Salle de bain", "Bureau"}; // Liste des types de pièces
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_room);
 
-        roomTypeSpinner = findViewById(R.id.room_type_spinner);
-        roomLevel = findViewById(R.id.room_level);
-        roomLength = findViewById(R.id.room_length);
-        roomWidth = findViewById(R.id.room_width);
-        btnCreateRoom = findViewById(R.id.btn_create_room);
+        roomTypeSpinner = findViewById(R.id.spinner_room_type);
+        Button btnSaveRoom = findViewById(R.id.btn_save_room);
 
-        // Configurer le spinner pour les types de pièces
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, roomTypes);
+        // Set up the spinner with room types
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.room_types, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         roomTypeSpinner.setAdapter(adapter);
 
-        btnCreateRoom.setOnClickListener(v -> createRoom());
-    }
+        btnSaveRoom.setOnClickListener(v -> {
+            // Get the room details from the input fields
+            String roomType = roomTypeSpinner.getSelectedItem().toString();
+            EditText roomLevelInput = findViewById(R.id.edit_room_level);
+            EditText roomLengthInput = findViewById(R.id.edit_room_length);
+            EditText roomWidthInput = findViewById(R.id.edit_room_width);
 
-    private void createRoom() {
-        String type = roomTypeSpinner.getSelectedItem().toString();
-        String levelText = roomLevel.getText().toString();
-        String lengthText = roomLength.getText().toString();
-        String widthText = roomWidth.getText().toString();
+            int roomLevel = Integer.parseInt(roomLevelInput.getText().toString().trim());
+            double roomLength = Double.parseDouble(roomLengthInput.getText().toString().trim());
+            double roomWidth = Double.parseDouble(roomWidthInput.getText().toString().trim());
 
-        // Vérifier que tous les champs sont remplis
-        if (!levelText.isEmpty() && !lengthText.isEmpty() && !widthText.isEmpty()) {
-            Integer level = tryParseInt(levelText);
-            Double length = tryParseDouble(lengthText);
-            Double width = tryParseDouble(widthText);
+            // Create an intent to pass the room data back to ApartmentDetailActivity
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra("ROOM_TYPE", roomType);
+            returnIntent.putExtra("ROOM_LEVEL", roomLevel);
+            returnIntent.putExtra("ROOM_LENGTH", roomLength);
+            returnIntent.putExtra("ROOM_WIDTH", roomWidth);
 
-            if (level != null && length != null && width != null) {
-                // Créer une nouvelle pièce
-                Room room = new Room(type, level, length, width);
+            // Send the data back and close this activity
+            setResult(RESULT_OK, returnIntent);
+            finish();
+        });
 
-                // Retourner les détails de la pièce à l'activité précédente
-                Intent resultIntent = new Intent();
-                resultIntent.putExtra("ROOM", room);
-                setResult(Activity.RESULT_OK, resultIntent);
-                finish(); // Fermer l'activité
-            } else {
-                Toast.makeText(this, "Veuillez entrer des valeurs valides", Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            Toast.makeText(this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
-        }
-    }
+        //Button to return to the previous activity
+        Button btnReturn = findViewById(R.id.btn_return);
+        btnReturn.setOnClickListener(v -> {
+            finish();
+        });
 
-    private Integer tryParseInt(String value) {
-        try {
-            return Integer.parseInt(value);
-        } catch (NumberFormatException e) {
-            return null;
-        }
-    }
-
-    private Double tryParseDouble(String value) {
-        try {
-            return Double.parseDouble(value);
-        } catch (NumberFormatException e) {
-            return null;
-        }
     }
 }

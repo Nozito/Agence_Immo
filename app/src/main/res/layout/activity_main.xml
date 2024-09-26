@@ -3,35 +3,59 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="50dp"
+    android:background="#ffffff"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="16dp"
-    android:background="@color/white">
+    android:translationY="35dp">
 
+    <!-- Title of the App -->
     <TextView
         android:id="@+id/welcome_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/spectral"
+        android:gravity="center"
+        android:padding="1dp"
         android:text="Bonjour et bienvenue chez Hilton Immobilier!"
+        android:textColor="#707070"
         android:textSize="24sp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="24dp"/>
+        android:textStyle="bold"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="30dp" />
 
+    <!-- Button to Add Apartment -->
     <Button
         android:id="@+id/btn_add_apartment"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ajouter un Appartement"
-        android:padding="16dp"
-        android:backgroundTint="@color/black"
-        android:textColor="@android:color/white"/>
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="1dp"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="#707070"
+        android:fontFamily="@font/spectral"
+        />
 
+    <!-- Button to View Apartment Details -->
     <Button
         android:id="@+id/btn_view_apartment_details"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Voir le détail de l'Appartement"
-        android:padding="16dp"
-        android:backgroundTint="@color/black"
-        android:textColor="@android:color/white"/>
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_rectangle_black"
+        android:padding="1dp"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/spectral"
+        />
+
 </LinearLayout>
